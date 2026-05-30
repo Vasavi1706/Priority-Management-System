@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com');
+/*home*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    padding: 0 20px;
+}
+
+.nav{
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav,
+.nav_item{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_logo,
+.nav_link,
+.button{
+    color:black;
+}
+.nav_logo{
+    font-size: 25px;
+}
+
+.nav_item{
+    column-gap: 25px;
+}
+
+.nav_link:hover {
+    color: #e5e5e5;
+}
+
+.button{
+    padding: 6px 24px;
+    border: 2px solid #333;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #ffffff;
+}
+.button:active{
+    transform: scale(0.98);
+}
+.home{
+    position: relative;
+    height:100vh;
+    width: 100%;
+    background-image: url("https://jntuhucps.in/images/ces_building.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px black solid;
+    flex-direction: column;
+}
+h1{
+    text-align: center;
+    color:black;
+    margin: 10px;
+    font-weight: 500;
+    font-size: 3rem;
+    font-family: arial;
+    margin-top: 10;
+}
+#flash-message{
+    background-color:#d4edda;
+    color:#155724;
+    padding:12px;
+    border-radius:6px;
+    margin:10px 0;
+    border:1px solid #c3e6cb;
+    width: fit-content;
+}
+
+.aboutus{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: row;
+    width: 100%;
+    height: 80%;
+    background-color: #ffffff;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.heading{
+    margin: 10px;
+    font-weight: 800;
+    font-size: 3rem;
+    font-family: arial;
+    top: 100%;
+    margin-top: 10px;
+}
+
+#description{
+    width:50%;
+    padding: 50px;
+    height: 100%;
+    text-align: justify;
+    line-height: 30px;       
+}
+/*vote*/
+.vote-box {
+    background-color: #fefae0;
+    padding: 25px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.complaints{
+    background-color: #DDA153;
+}
+.vote-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.option {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #606c38;
+}
+
+.option span {
+    font-weight: bold;
+}
+
+.total {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.Complaints{
+    color:black;
+    font-size:large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+}
+/*lets talk*/
+.lets_talk{
+    background-color: #fefae0;
+}
+textarea{
+    width: 500px;
+    height: 50px;
+    border-radius: 15px;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    border-color: black;
+    padding-left: 20px;
+    padding-top: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    justify-content: space-between;
+    display: flex;
+    position: relative;
+}
+textarea ::placeholder{
+    color: black;
+}
+button{
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background: #283618;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    margin: 20px;
+    color: #fff;
+    font-size: 1rem;
+    align-items: baseline;
+    cursor: pointer;
+}
+.container{
+    width: 80%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/*complaints*/
+.complaints{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+}
+
+form label{
+    align-items: center;
+}
+form input{
+    width: 500px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    border-color: black;
+    padding-left: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    display: flex;
+}
+label{
+    text-align: left;
+    text-decoration: none;
+    font-size: small;
+}
+/*contact us*/
+#contact_us{
+    padding-top:40px;
+    background-color: antiquewhite;
+    
+}
+#contact_us h1{
+    margin-top:0;
+}
+.contacts .ol .li{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5rem;
+}
+.contacts{
+    margin-top:15px;
+    padding-left:20px;
+    margin-right: 1000px;
+}
+
+.contacts li{
+    margin-bottom:12px;
+    font-size:16px;
+}
+/*footer*/
+footer{
+    background-color: darkgray;
+    padding: 8px;
+    text-align: center; 
+    margin-top: 20px;
+}
+.copyright{
+    color: gray;
+}
+.login{
+    display: none;
+}

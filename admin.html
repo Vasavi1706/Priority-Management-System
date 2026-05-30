@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+</head>
+<body>
+    <style>
+
+        body{
+            background: linear-gradient(135deg,#1e3c72,#2a5298);
+            font-family: Arial, Helvetica, sans-serif;
+            color:white;
+            text-align:center;
+        }
+
+        h2{
+            margin-top:40px;
+        }
+
+        table{
+            margin:auto;
+            margin-top:20px;
+            border-collapse: collapse;
+            background:white;
+            color:black;
+            width:80%;
+        }
+
+        th{
+            background:#4CAF50;
+            color:white;
+            padding:10px;
+        }
+
+        td{
+            padding:10px;
+            text-align:center;
+        }
+
+        tr:nth-child(even){
+            background:#f2f2f2;
+        }
+    </style>
+    <h2>Login History</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>RolloNo</th>
+            <th>Email</th>
+            <th>Login Time</th>
+        </tr>
+
+        {% for row in login_records %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Register History</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>RolloNo</th>
+            <th>Email</th>
+            <th>Register Time</th>   
+        </tr>
+
+        {% for row in register_records %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Complaints</h2>
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>RollNo</th>
+            <th>Description</th>
+            <th>Date</th>
+        </tr>
+
+        {% for c in complaints %}
+
+        <tr>
+            <td>{{c[0]}}</td>
+            <td>{{c[1]}}</td>
+            <td>{{c[2]}}</td>
+            <td>{{c[3]}}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+
+</body>
+</html>

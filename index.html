@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Complaints</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css') }}">
+
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a  href="#" class="nav_logo">Intelligent Complaint Prioritization </a>             
+                <ul class="nav_items">
+                    <li class="nav_item">
+                        <a href="#home" class="nav_link">Home</a>
+                        <a href="#about" class="nav_link">About Us</a>
+                        <a href="#complaints" class="nav_link">General Compliants</a>
+                        <a href="#talk" class="nav_link">Let's Talk</a>
+                        <a href="#contact_us" class="nav_link">Contact Us</a>
+                    </li>
+                </ul>
+                <a href="/login">
+                     <button class="button">Login</button>
+                </a>   
+        </nav>
+    </header>
+    <section class="home" id="home">
+         {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div id="flash-message">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+            </div>
+            <script src="{{ url_for('static', filename='success.js') }}"></script>
+    </section>
+
+    <section id="about">
+        <h1 class="heading">About Us</h1>
+        <div class="aboutus">
+            <img src="https://st3.depositphotos.com/29384342/33641/i/450/depositphotos_336416738-stock-photo-close-hand-putting-ballot-glass.jpg" height="500" width="550" style="align-content:right; margin-left:20px; margin-right:200px;">
+            <div id="description">
+            <p class="text">
+                This project aims to develop a web-based complaint system for the college campus,
+                specifically designed for B. Tech hostel students.The proposed system enables the users 
+                to submit their complaints specifying the urgency level and description. 
+                A rule-based priority ranking mechanism evaluates the complaint based on the urgency level 
+                and frequency of complaints recorded. The highest ranked complaints are solved immediately 
+                and satisfies the students utmost requirements.This system improves efficiency, transparency,
+                and responsiveness in complaint management. 
+            </p>
+            </div>
+            <div class="imgbox">
+                <img src="#" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="complaints" id="complaints">
+    <h1 class="heading">General Complaints</h1>
+    <div class="container">
+        <!-- Hostel Complaints -->
+        <div class="vote-box">
+            <h3>Hostel Complaints</h3>
+
+            <div class="option">
+                <button onclick="castVote(0)">Water</button>
+                <span id="p0">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(1)">Mess Food</button>
+                <span id="p1">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(2)">Cleanliness</button>
+                <span id="p2">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(3)">Mess Fee</button>
+                <span id="p3">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(4)">Electricity</button>
+                <span id="p4">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(5)">Dust Bin</button>
+                <span id="p5">0%</span>
+            </div>
+
+            <p class="total">Total Votes: <span id="total">0</span></p>
+        </div>
+
+
+        <!-- Academic Complaints -->
+        <div class="vote-box">
+            <h3>Academic Complaints</h3>
+
+            <div class="option">
+                <button onclick="castVote(6)">Faculty Behaviour</button>
+                <span id="p6">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(7)">Teaching Quality</button>
+                <span id="p7">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(8)">Exam Schedule</button>
+                <span id="p8">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(9)">Assignment Load</button>
+                <span id="p9">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(10)">Marks Evaluation</button>
+                <span id="p10">0%</span>
+            </div>
+
+            <div class="option">
+                <button onclick="castVote(11)">Lab Facilities</button>
+                <span id="p11">0%</span>
+            </div>
+
+            <p class="total2">Total Votes: <span id="total2">0</span></p>
+        </div>
+            <script>
+                let loggedIn = "{{ logged_in }}";
+            </script>
+            <script src="{{ url_for('static', filename='poll.js') }}"></script>
+    </div>
+    </section>
+
+    <section id="talk" class="lets_talk">
+        <h1 class="heading">Let's Talk</h1>
+            <div id="description">
+                <h3>Describe your Complaint!!!</h3>
+
+                <form action="/submit_complaint" method="POST">
+
+                <textarea name="description" placeholder="Write your complaint here..." required></textarea>
+
+                <div class="container">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+    </section>
+
+        <section id="contact_us">
+            <h1 class="heading">Contact Us</h1>
+            <div id="contact">
+                <h3>Contact the faculty for More</h3>
+                    <ol class="contacts">
+                        <li>Hostel Wardens - <span class="phone">248329098</span></li>
+                        <li>Scholarship Section - <span class="phone">248329098</span></li>
+                        <li>Examination Branch - <span class="phone">248329098</span></li>
+                        <li>Library - <span class="phone">248329098</span></li>
+                        <li>Administrative Section - <span class="phone">248329098</span></li>
+                        <li>Faculty - <span class="phone">248329098</span></li>
+                        <li>Hostel Wardens - <span class="phone">248329098</span></li>
+                        <li>Scholarship Section - <span class="phone">248329098</span></li>
+                        <li>Examination Branch - <span class="phone">248329098</span></li>
+                        <li>Library - <span class="phone">248329098</span></li>
+                        <li>Administrative Section - <span class="phone">248329098</span></li>
+                        <li>Faculty - <span class="phone">248329098</span></li>
+                        <li>Hostel Wardens - <span class="phone">248329098</span></li>
+                        <li>Scholarship Section - <span class="phone">248329098</span></li>
+                        <li>Examination Branch - <span class="phone">248329098</span></li>
+                        <li>Library - <span class="phone">248329098</span></li>
+                        <li>Administrative Section - <span class="phone">248329098</span></li>
+                        <li>Faculty - <span class="phone">248329098</span></li>
+                    </ol>  
+            </div>       
+        </section>
+
+        <footer>
+                <div>
+                    <span class="copyright" width="100%">©2026,JNTUHUCES Intelligent Complaint Priritization.</span>
+                </div>
+        </footer>
+</body>
+</html>
